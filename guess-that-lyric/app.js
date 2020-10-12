@@ -14,5 +14,9 @@ $(() => {
     const $question = $(".description").replaceWith(
       "<h3>Yeah, I'm gonna take my ____ to the old town road I'm gonna ____ 'til I can't no more</h3>"
     );
+    //create new div between question and button
+    //for answer choices
+    const $choices = $("<div>").addClass("choices");
+    $(".container").append($choices);
   });
 });
