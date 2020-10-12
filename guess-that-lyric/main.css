@@ -3,6 +3,10 @@ h3 {
   text-align: center;
 }
 
-button {
-  margin: 0 auto;
+h3 {
+  font-weight: 300;
+}
+
+.button {
+  text-align: center;
 }
