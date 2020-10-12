@@ -19,16 +19,24 @@ $(() => {
     const $choices = $("<div>").addClass("choices");
     $(".container").append($choices);
     //answerChoice1
-    const $choice1 = $("<button>").addClass("choice-1").text("horse, ride");
+    const $choice1 = $("<button>")
+      .addClass("choice-1 btn-sm")
+      .text("horse, ride");
     $(".choices").append($choice1);
     //answerChoice2
-    const $choice2 = $("<button>").addClass("choice-2").text("horse, die");
+    const $choice2 = $("<button>")
+      .addClass("choice-2 btn-sm")
+      .text("horse, die");
     $(".choices").append($choice2);
     //answerChoice3
-    const $choice3 = $("<button>").addClass("choice-3").text("pony, ride");
+    const $choice3 = $("<button>")
+      .addClass("choice-3 btn-sm")
+      .text("pony, ride");
     $(".choices").append($choice3);
     //answerChoice4
-    const $choice4 = $("<button>").addClass("choice-4").text("pony, die");
+    const $choice4 = $("<button>")
+      .addClass("choice-4 btn-sm ")
+      .text("pony, die");
     $(".choices").append($choice4);
   });
 });

@@ -34,7 +34,8 @@ button:hover {
   transition: all 200ms ease;
 }
 
-/* .choices {
-  flex-wrap: wrap;
-  height: 500px;
-} */
+.choices {
+  display: flex;
+  justify-content: space-around;
+  /* flex-wrap: wrap; */
+}
