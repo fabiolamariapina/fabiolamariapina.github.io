@@ -12,7 +12,7 @@ $(() => {
     //with question and multiple choice answers
     // source: https://api.jquery.com/replacewith/
     const $question = $(".description").replaceWith(
-      "<h3>Yeah, I'm gonna take my horse to the old town road I'm gonna ride 'til I can't no more</h3>"
+      "<h3>Yeah, I'm gonna take my ____ to the old town road I'm gonna ____ 'til I can't no more</h3>"
     );
   });
 });
