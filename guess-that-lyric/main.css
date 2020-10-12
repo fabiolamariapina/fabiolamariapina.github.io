@@ -6,7 +6,8 @@ body {
 
 .heading,
 .container,
-.button {
+.button,
+.choices {
   padding: 50px;
 }
 
@@ -32,3 +33,8 @@ button:hover {
   color: #eeeeee;
   transition: all 200ms ease;
 }
+
+/* .choices {
+  flex-wrap: wrap;
+  height: 500px;
+} */
