@@ -18,5 +18,17 @@ $(() => {
     //for answer choices
     const $choices = $("<div>").addClass("choices");
     $(".container").append($choices);
+    //answerChoice1
+    const $choice1 = $("<button>").addClass("choice-1").text("horse, ride");
+    $(".choices").append($choice1);
+    //answerChoice2
+    const $choice2 = $("<button>").addClass("choice-2").text("horse, die");
+    $(".choices").append($choice2);
+    //answerChoice3
+    const $choice3 = $("<button>").addClass("choice-3").text("pony, ride");
+    $(".choices").append($choice3);
+    //answerChoice4
+    const $choice4 = $("<button>").addClass("choice-4").text("pony, die");
+    $(".choices").append($choice4);
   });
 });
