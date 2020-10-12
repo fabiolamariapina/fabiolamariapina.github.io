@@ -2,6 +2,12 @@ body {
   font-family: "Dosis", sans-serif;
 }
 
+.heading,
+.container,
+.button {
+  padding: 50px;
+}
+
 h1,
 h3 {
   text-align: center;
