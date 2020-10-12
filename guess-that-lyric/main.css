@@ -22,3 +22,12 @@ h1 {
 .button {
   text-align: center;
 }
+
+button {
+  box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+}
+
+button:hover {
+  background-color: #00adb5;
+  color: #eeeeee;
+}
