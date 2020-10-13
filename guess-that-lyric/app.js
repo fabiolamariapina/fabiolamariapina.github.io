@@ -53,12 +53,9 @@ $(() => {
     // when let's play button is clicked,
     //the load page will disappear
     //and the first question will appear
-    // I want to replace description and btn
-    //with question and multiple choice answers
-    // source: https://api.jquery.com/replacewith/
-    const $question = $(".description").replaceWith(
-      "<h3>Yeah, I'm gonna take my ____ to the old town road I'm gonna ____ 'til I can't no more</h3>"
-    );
+    const $question = $(".description")
+      .removeClass("description")
+      .addClass("question").;
     //create new div between question and button
     //for answer choices
     const $choices = $("<div>").addClass("choices");
@@ -100,4 +97,5 @@ $(() => {
 //right= function
 for (let i = 0; i < questionsAndAnswers.length; i++) {
   // console.log(questionsAndAnswers);
+  // output text for question and answer choices
 }
