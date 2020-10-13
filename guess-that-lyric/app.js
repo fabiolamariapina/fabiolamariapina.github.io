@@ -94,3 +94,10 @@ $(() => {
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
   });
 });
+
+//for loop to generate random questions and answers
+//recursive function
+//right= function
+for (let i = 0; i < questionsAndAnswers.length; i++) {
+  // console.log(questionsAndAnswers);
+}
