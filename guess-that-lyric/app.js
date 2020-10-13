@@ -68,22 +68,22 @@ $(() => {
     //answerChoice1
     const $choice1 = $("<button>")
       .addClass("choice-1 btn-sm")
-      .text("horse, ride");
+      .text(questionsAndAnswers[0].choice1);
     $(".choices").append($choice1);
     //answerChoice2
     const $choice2 = $("<button>")
       .addClass("choice-2 btn-sm")
-      .text("horse, die");
+      .text(questionsAndAnswers[0].choice2);
     $(".choices").append($choice2);
     //answerChoice3
     const $choice3 = $("<button>")
       .addClass("choice-3 btn-sm")
-      .text("pony, ride");
+      .text(questionsAndAnswers[0].choice3);
     $(".choices").append($choice3);
     //answerChoice4
     const $choice4 = $("<button>")
       .addClass("choice-4 btn-sm ")
-      .text("pony, die");
+      .text(questionsAndAnswers[0].choice4);
     $(".choices").append($choice4);
     //change let's play button to Answer button
     // source:
