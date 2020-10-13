@@ -53,9 +53,14 @@ $(() => {
     // when let's play button is clicked,
     //the load page will disappear
     //and the first question will appear
+    // remove and add class from .description
+    //to .question
+    // source: https://api.jquery.com/removeclass/
+    // add text of object in questionAndAnswers array
     const $question = $(".description")
       .removeClass("description")
-      .addClass("question").;
+      .addClass("question")
+      .html(questionsAndAnswers[0].question);
     //create new div between question and button
     //for answer choices
     const $choices = $("<div>").addClass("choices");
