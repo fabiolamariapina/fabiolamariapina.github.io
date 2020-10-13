@@ -39,9 +39,13 @@ $(() => {
       .text("pony, die");
     $(".choices").append($choice4);
     //change let's play button to Answer button
-    // source: 
+    // source:
     //https://www.tutorialrepublic.com/faq/how-to-change-the-text
     //-of-a-button-using-jquery.php
-    const $answerButton = $("#btn").html("Answer");
+    // change class of answer button but keep same styling of let's play
+    //button
+    // source: https://stackoverflow.com/questions/3959236/
+    //how-to-change-class-name-of-an-element-by-jquery
+    const $answerButton = $("#btn").html("Answer").addClass("answer-button");
   });
 });
