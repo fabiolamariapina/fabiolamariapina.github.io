@@ -39,7 +39,9 @@ $(() => {
       .text("pony, die");
     $(".choices").append($choice4);
     //change let's play button to Answer button
-    const $answerButton = $("#btn").replaceWith("<button>Answer</button>");
-    $answerButton.attr("class", "answer btn-lg");
+    // source: 
+    //https://www.tutorialrepublic.com/faq/how-to-change-the-text
+    //-of-a-button-using-jquery.php
+    const $answerButton = $("#btn").html("Answer");
   });
 });
