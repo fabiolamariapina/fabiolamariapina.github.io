@@ -49,3 +49,47 @@ $(() => {
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
   });
 });
+
+// create a nested array of objects for questions and answer choices
+// https://stackoverflow.com/questions/56115993/create-nested
+//-array-in-javascript
+const questionsAndAnswers = [
+  {
+    question:
+      "Yeah, I'm gonna take my ____ to the old town road I'm gonna ____ 'til I can't no more",
+    choice1: "horse,ride",
+    choice2: "horse, die",
+    choice3: "pony, ride",
+    choice4: "pony, die",
+  },
+  {
+    question:
+      "There's a fire starting in my ____ Reaching a fever ____ and it's bringing me out the dark",
+    choice1: "heart, ditch",
+    choice2: "dart, ditch",
+    choice3: "dart, pitch",
+    choice4: "heart, pitch",
+  },
+  {
+    question: "That's why I need a one dance Got a ____ in my hand",
+    choice1: "Bacardi",
+    choice2: "Tequila",
+    choice3: "Hennessy",
+    choice4: "Vodka",
+  },
+  {
+    question:
+      "I see the magazine workin' that _____ We know that shit ain't real, come on now, make it stop",
+    choice1: "Booty",
+    choice2: "Photoshop",
+    choice3: "Facetune",
+    choice4: "funky jazz",
+  },
+  {
+    question: "Stop, wait a minute Fill my cup, put some ____ in it",
+    choice1: "water",
+    choice2: "liquor",
+    choice3: "soda",
+    choice4: "vodka",
+  },
+];

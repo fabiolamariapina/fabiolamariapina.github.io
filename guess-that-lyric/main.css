@@ -22,6 +22,7 @@ h1 {
 
 .button {
   text-align: center;
+  margin: 25px;
 }
 
 button {
@@ -35,8 +36,7 @@ button:hover {
 }
 
 .choices {
+  margin: 25px;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
-  /* flex-wrap: wrap; */
 }
