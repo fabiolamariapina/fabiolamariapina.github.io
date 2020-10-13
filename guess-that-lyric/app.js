@@ -93,3 +93,4 @@ const questionsAndAnswers = [
     choice4: "vodka",
   },
 ];
+// console.log(questionsAndAnswers[1].question);
