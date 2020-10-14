@@ -57,10 +57,12 @@ $(() => {
     //to .question
     // source: https://api.jquery.com/removeclass/
     // add text of object in questionAndAnswers array
+    // make it so that when let's play button clicks,
+    //a random array element (aka a random song/missing lyrics) appears
     const $question = $(".description")
       .removeClass("description")
       .addClass("question")
-      .html(questionsAndAnswers[0].question);
+      .text(questionsAndAnswers[0].question);
     //create new div between question and button
     //for answer choices
     const $choices = $("<div>").addClass("choices");
