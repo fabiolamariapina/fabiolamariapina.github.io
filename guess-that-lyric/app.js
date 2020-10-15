@@ -112,17 +112,17 @@ $(() => {
     // source: https://stackoverflow.com/questions/3959236/
     //how-to-change-class-name-of-an-element-by-jquery
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
+  };
 
-    // user will pick thier answer and then user will click the answer button
-    // when user clicks the answer button, it will flash red for wrong answer choices and right
-    // for wrong answe choices
-    //what the user clicks will contribute to their point total
-    // const rightOrWrong = () => {
-    //   // psuedocode
-    //   // correct answer will be green, wrong anweres red -> all jQuery
-    //   // if user gets answer correct, they will get one point added to score
-    //   // else, they do not get any points
-    // };
+  // user will pick thier answer and then user will click the answer button
+  // when user clicks the answer button, it will flash red for wrong answer choices and right
+  // for wrong answe choices
+  //what the user clicks will contribute to their point total
+  const rightOrWrong = () => {
+    // psuedocode
+    // correct answer will be green, wrong anweres red -> all jQuery
+    // if user gets answer correct, they will get one point added to score
+    // else, they do not get any points
   };
 
   // create event handler for let's
@@ -141,5 +141,10 @@ $(() => {
     // make it so that when let's play button clicks,
     //a random array element (aka a random song/missing lyrics) appears
     getNewQuestion();
+  });
+
+  //create event handler for answer button once user chooses their answer
+  $answerButton.on("click", () => {
+    rightOrWrong();
   });
 });
