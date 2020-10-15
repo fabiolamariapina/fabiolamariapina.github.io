@@ -117,29 +117,29 @@ $(() => {
     // when user clicks the answer button, it will flash red for wrong answer choices and right
     // for wrong answe choices
     //what the user clicks will contribute to their point total
-    const rightOrWrong = () => {
-      // psuedocode
-      // correct answer will be green, wrong anweres red -> all jQuery
-      // if user gets answer correct, they will get one point added to score
-      // else, they do not get any points
-    };
-
-    // create event handler for let's
-    //play button
-    // source: General Assembly SEI
-    //W03D01 notes
-    const $btn = $("#btn");
-    $btn.on("click", () => {
-      // when let's play button is clicked,
-      //the load page will disappear
-      //and the first question will appear
-      // remove and add class from .description
-      //to .question
-      // source: https://api.jquery.com/removeclass/
-      // add text of object in questionAndAnswers array
-      // make it so that when let's play button clicks,
-      //a random array element (aka a random song/missing lyrics) appears
-      getNewQuestion();
-    });
+    // const rightOrWrong = () => {
+    //   // psuedocode
+    //   // correct answer will be green, wrong anweres red -> all jQuery
+    //   // if user gets answer correct, they will get one point added to score
+    //   // else, they do not get any points
+    // };
   };
+
+  // create event handler for let's
+  //play button
+  // source: General Assembly SEI
+  //W03D01 notes
+  const $btn = $("#btn");
+  $btn.on("click", () => {
+    // when let's play button is clicked,
+    //the load page will disappear
+    //and the first question will appear
+    // remove and add class from .description
+    //to .question
+    // source: https://api.jquery.com/removeclass/
+    // add text of object in questionAndAnswers array
+    // make it so that when let's play button clicks,
+    //a random array element (aka a random song/missing lyrics) appears
+    getNewQuestion();
+  });
 });
