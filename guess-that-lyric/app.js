@@ -130,10 +130,14 @@ $(() => {
     // add text of object in questionAndAnswers array
     // make it so that when let's play button clicks,
     //a random array element (aka a random song/missing lyrics) appears
-
     getNewQuestion();
   });
-}); 
+
+  //create event handler for answer button
+  $answerButton.on('click', () => {
+    rightOrWrong()
+  })
+// });  
 
 
 
@@ -141,11 +145,4 @@ $(() => {
 
 
 
-// save for later
-//for loop to generate random questions and answers
-//recursive function
-//right= function
-// for (let i = 0; i < questionsAndAnswers.length; i++) {
-//   // console.log(questionsAndAnswers);
-//   // output text for question and answer choices
-// }
+
