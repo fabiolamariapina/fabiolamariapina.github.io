@@ -40,3 +40,13 @@ button:hover {
   display: flex;
   flex-direction: column;
 }
+
+.right-answer {
+  background-color: #b8de6f;
+  color: #eeeeee;
+}
+
+.wrong-answer {
+  background-color: #ff5722;
+  color: #eeeeee;
+}

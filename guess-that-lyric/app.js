@@ -94,7 +94,10 @@ $(() => {
     // source: https://stackoverflow.com/questions/3959236/
     //how-to-change-class-name-of-an-element-by-jquery
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
-  };
+    // user will pick thier answer and then user will click the answer button
+    // when user clicks the answer button, it will flash red for wrong answer choices and right 
+    // for wrong answe choices
+    //what the user clicks will contribute to their point total 
   // create event handler for let's
   //play button
   // source: General Assembly SEI
