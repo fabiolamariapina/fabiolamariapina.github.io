@@ -9,6 +9,7 @@ const questionsAndAnswers = [
     choice2: "horse, die",
     choice3: "pony, ride",
     choice4: "pony, die",
+    correctAnswer: "horse,ride",
   },
   {
     question:
@@ -17,6 +18,7 @@ const questionsAndAnswers = [
     choice2: "dart, ditch",
     choice3: "dart, pitch",
     choice4: "heart, pitch",
+    correctAnswer: "heart, pitch",
   },
   {
     question: "That's why I need a one dance Got a ____ in my hand",
@@ -24,6 +26,7 @@ const questionsAndAnswers = [
     choice2: "Tequila",
     choice3: "Hennessy",
     choice4: "Vodka",
+    correctAnswer: "Hennessy",
   },
   {
     question:
@@ -32,6 +35,7 @@ const questionsAndAnswers = [
     choice2: "Photoshop",
     choice3: "Facetune",
     choice4: "funky jazz",
+    correctAnswer: "Photoshop",
   },
   {
     question: "Stop, wait a minute Fill my cup, put some ____ in it",
@@ -39,6 +43,7 @@ const questionsAndAnswers = [
     choice2: "liquor",
     choice3: "soda",
     choice4: "vodka",
+    correctAnswer: "liquor",
   },
 ];
 
