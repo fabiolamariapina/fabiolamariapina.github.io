@@ -102,6 +102,16 @@ $(() => {
 
     //remove item from array once it has been used as a question
     newQuestions.splice(randomIndex, 1);
+
+    //change let's play button to Answer button
+    // source:
+    //https://www.tutorialrepublic.com/faq/how-to-change-the-text
+    //-of-a-button-using-jquery.php
+    // change class of answer button but keep same styling of let's play
+    //button
+    // source: https://stackoverflow.com/questions/3959236/
+    //how-to-change-class-name-of-an-element-by-jquery
+    const $answerButton = $("#btn").html("Answer").addClass("answer-button");
   };
 
   // user will pick thier answer and then user will click the answer button
@@ -137,19 +147,7 @@ $(() => {
   // let userChoice = $("")
 
   //create event handler for answer button once user chooses their answer
-  // $answerButton.on("click", () => {
-  //   rightOrWrong();
-  // });
+  $answerButton.on("click", () => {
+    rightOrWrong();
+  });
 });
-
-
-//  //change let's play button to next button 
-// next button will appear after user find out if their answer is right/wrong
-    // source:
-    //https://www.tutorialrepublic.com/faq/how-to-change-the-text
-    //-of-a-button-using-jquery.php
-    // change class of answer button but keep same styling of let's play
-    //button
-    // source: https://stackoverflow.com/questions/3959236/
-    //how-to-change-class-name-of-an-element-by-jquery
-    // const $nextButton = $("#btn").html("Next").addClass("next-button");
