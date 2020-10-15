@@ -1,6 +1,7 @@
 // create a nested array of objects for questions and answer choices
-// https://stackoverflow.com/questions/56115993/create-nested
+// source: https://stackoverflow.com/questions/56115993/create-nested
 //-array-in-javascript
+// structure inspired by
 const questionsAndAnswers = [
   {
     question:
@@ -87,20 +88,20 @@ $(() => {
     //answerChoice1
     const $choice1 = $("<button>")
       .attr("id", "choice-1")
-      .addClass("choice-1 btn-sm")
+      .addClass("btn-sm")
       .text(newQuestions[randomIndex].answers.choice1);
     $(".choices").append($choice1);
 
     //answerChoice2
     const $choice2 = $("<button>")
       .attr("id", "choice-2")
-      .addClass("choice-2 btn-sm")
+      .addClass("btn-sm")
       .text(newQuestions[randomIndex].answers.choice2);
     $(".choices").append($choice2);
 
     //answerChoice3
     const $choice3 = $("<button>")
-      .addClass("choice-3 btn-sm")
+      .addClass("btn-sm")
       .attr("id", "choice-3")
       .text(newQuestions[randomIndex].answers.choice3);
     $(".choices").append($choice3);
@@ -108,7 +109,7 @@ $(() => {
     //answerChoice4
     const $choice4 = $("<button>")
       .attr("id", "choice-4")
-      .addClass("choice-4 btn-sm ")
+      .addClass("btn-sm")
       .text(newQuestions[randomIndex].answers.choice4);
     $(".choices").append($choice4);
 
@@ -125,43 +126,58 @@ $(() => {
     //how-to-change-class-name-of-an-element-by-jquery
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
 
-    // create new variable for user choice
-    // let userChoice =
-
     // create event handler for when users chooses their answer and thier answer turns yellow
     //and stays yellow until user clicks answer button
     // source: https://api.jquery.com/multiple-selector/
     // source: https://www.w3schools.com/jquery/event_preventdefault.asp
     $choice1.on("click", () => {
       $("#choice-1").css("background-color", "#f1e189").css("color", "#eeeeee");
+      answerQuestion();
     });
     $choice2.on("click", () => {
       $("#choice-2").css("background-color", "#f1e189").css("color", "#eeeeee");
+      answerQuestion();
     });
     $choice3.on("click", () => {
       $("#choice-3").css("background-color", "#f1e189").css("color", "#eeeeee");
+      answerQuestion();
     });
     $choice4.on("click", () => {
       $("#choice-4").css("background-color", "#f1e189").css("color", "#eeeeee");
+      answerQuestion();
     });
 
-    //create event handler for answer button once user chooses their answer
-    $answerButton.on("click", () => {
-      // psuedocode
-      // correct answer will be green, wrong anweres red -> all jQuery
-      // if user gets answer correct, they will get one point added to score
-      // else, they do not get any points
-      // make correct answer green
-      // multiple selectors
-      // create variables for correct answers
-      // const $correctAnswers = $("<button>")
-      //   .addClass("correct-answer")
-      //   .text(newQuestions[randomIndex].correctAnswer)
-      //   .css("background-color", "#b8de6f")
-      //   .css("color", "#eeeeee");
-      // change answer button to next
-      const $nextButton = $("#btn").html("Next").addClass("next-button");
-    });
+    // create event listener that listens for that .btn-sm class to be clicked
+    //and then make it fire off answer button function
+    // $(".btn-sm").on("click", () => {
+    //   answerQuestion();
+    // });
+
+    // create answerQuestion function
+    // in the answerButton function: get the text of the button(can be done
+    //with jquerry) and compare it to the correct answer using an if statement
+    const answerQuestion = () => {
+      //create event handler for answer button once user chooses their answer
+      $answerButton.on("click", () => {
+        // get the text of the button and compare it to correct answer
+        // let userChoice = $("#choice-1").click();
+        // if correct give it the correct css stylying and add score
+        if (userChoice === newQuestion[randomIndex.correctAnswer]) {
+          // css styling: in my css folder
+          score++;
+        }
+        // else give it the incorrect styling and dont give score
+        else {
+          // css styling in css file
+          return score;
+        }
+        const $nextButton = $("#btn").html("Next").addClass("next-button");
+        //create event listner for next button
+        $nextButton.on(click, () => {
+          getNewQuestion();
+        });
+      });
+    };
   };
 
   // create event handler for let's
