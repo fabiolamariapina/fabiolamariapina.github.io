@@ -5,50 +5,56 @@ const questionsAndAnswers = [
   {
     question:
       "Yeah, I'm gonna take my ____ to the old town road I'm gonna ____ 'til I can't no more",
-    choice1: "horse,ride",
-    choice2: "horse, die",
-    choice3: "pony, ride",
-    choice4: "pony, die",
+    answers: {
+      choice1: "horse,ride",
+      choice2: "horse, die",
+      choice3: "pony, ride",
+      choice4: "pony, die",
+    },
+    correctAnswer: "horse,ride",
   },
   {
     question:
       "There's a fire starting in my ____ Reaching a fever ____ and it's bringing me out the dark",
-    choice1: "heart, ditch",
-    choice2: "dart, ditch",
-    choice3: "dart, pitch",
-    choice4: "heart, pitch",
+    answers: {
+      choice1: "heart, ditch",
+      choice2: "dart, ditch",
+      choice3: "dart, pitch",
+      choice4: "heart, pitch",
+    },
+    correctAnswer: "heart, pitch",
   },
   {
     question: "That's why I need a one dance Got a ____ in my hand",
-    choice1: "Bacardi",
-    choice2: "Tequila",
-    choice3: "Hennessy",
-    choice4: "Vodka",
+    answers: {
+      choice1: "Bacardi",
+      choice2: "Tequila",
+      choice3: "Hennessy",
+      choice4: "Vodka",
+    },
+    correctAnswer: "Hennessy",
   },
   {
     question:
       "I see the magazine workin' that _____ We know that shit ain't real, come on now, make it stop",
-    choice1: "Booty",
-    choice2: "Photoshop",
-    choice3: "Facetune",
-    choice4: "funky jazz",
+    answers: {
+      choice1: "Booty",
+      choice2: "Photoshop",
+      choice3: "Facetune",
+      choice4: "funky jazz",
+    },
+    correctAnswer: "Photoshop",
   },
   {
     question: "Stop, wait a minute Fill my cup, put some ____ in it",
-    choice1: "water",
-    choice2: "liquor",
-    choice3: "soda",
-    choice4: "vodka",
+    answers: {
+      choice1: "water",
+      choice2: "liquor",
+      choice3: "soda",
+      choice4: "vodka",
+    },
+    correctAnswer: "liquor",
   },
-];
-
-//create array of correct answers
-const correctAnswers = [
-  questionsAndAnswers[0].choice1,
-  questionsAndAnswers[1].choice4,
-  questionsAndAnswers[2].choice3,
-  questionsAndAnswers[3].choice2,
-  questionsAndAnswers[4].choice2,
 ];
 
 $(() => {
@@ -82,28 +88,28 @@ $(() => {
     const $choice1 = $("<button>")
       .attr("id", "choice-1")
       .addClass("choice-1 btn-sm")
-      .text(newQuestions[randomIndex].choice1);
+      .text(newQuestions[randomIndex].answers.choice1);
     $(".choices").append($choice1);
 
     //answerChoice2
     const $choice2 = $("<button>")
       .attr("id", "choice-2")
       .addClass("choice-2 btn-sm")
-      .text(newQuestions[randomIndex].choice2);
+      .text(newQuestions[randomIndex].answers.choice2);
     $(".choices").append($choice2);
 
     //answerChoice3
     const $choice3 = $("<button>")
       .addClass("choice-3 btn-sm")
       .attr("id", "choice-3")
-      .text(newQuestions[randomIndex].choice3);
+      .text(newQuestions[randomIndex].answers.choice3);
     $(".choices").append($choice3);
 
     //answerChoice4
     const $choice4 = $("<button>")
       .attr("id", "choice-4")
       .addClass("choice-4 btn-sm ")
-      .text(newQuestions[randomIndex].choice4);
+      .text(newQuestions[randomIndex].answers.choice4);
     $(".choices").append($choice4);
 
     //remove item from array once it has been used as a question
@@ -118,6 +124,9 @@ $(() => {
     // source: https://stackoverflow.com/questions/3959236/
     //how-to-change-class-name-of-an-element-by-jquery
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
+
+    // create new variable for user choice
+    // let userChoice =
 
     // create event handler for when users chooses their answer and thier answer turns yellow
     //and stays yellow until user clicks answer button
@@ -143,6 +152,15 @@ $(() => {
       // if user gets answer correct, they will get one point added to score
       // else, they do not get any points
       // make correct answer green
+      // multiple selectors
+      // create variables for correct answers
+      // const $correctAnswers = $("<button>")
+      //   .addClass("correct-answer")
+      //   .text(newQuestions[randomIndex].correctAnswer)
+      //   .css("background-color", "#b8de6f")
+      //   .css("color", "#eeeeee");
+      // change answer button to next
+      const $nextButton = $("#btn").html("Next").addClass("next-button");
     });
   };
 
