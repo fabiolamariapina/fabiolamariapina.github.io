@@ -9,7 +9,6 @@ const questionsAndAnswers = [
     choice2: "horse, die",
     choice3: "pony, ride",
     choice4: "pony, die",
-    correctAnswer: "horse,ride",
   },
   {
     question:
@@ -18,7 +17,6 @@ const questionsAndAnswers = [
     choice2: "dart, ditch",
     choice3: "dart, pitch",
     choice4: "heart, pitch",
-    correctAnswer: "heart, pitch",
   },
   {
     question: "That's why I need a one dance Got a ____ in my hand",
@@ -26,7 +24,6 @@ const questionsAndAnswers = [
     choice2: "Tequila",
     choice3: "Hennessy",
     choice4: "Vodka",
-    correctAnswer: "Hennessy",
   },
   {
     question:
@@ -35,7 +32,6 @@ const questionsAndAnswers = [
     choice2: "Photoshop",
     choice3: "Facetune",
     choice4: "funky jazz",
-    correctAnswer: "Photoshop",
   },
   {
     question: "Stop, wait a minute Fill my cup, put some ____ in it",
@@ -43,11 +39,17 @@ const questionsAndAnswers = [
     choice2: "liquor",
     choice3: "soda",
     choice4: "vodka",
-    correctAnswer: "liquor",
   },
 ];
 
-// create variables for correct answers
+//create array of correct answers
+const correctAnswers = [
+  questionsAndAnswers[0].choice1,
+  questionsAndAnswers[1].choice4,
+  questionsAndAnswers[2].choice3,
+  questionsAndAnswers[3].choice2,
+  questionsAndAnswers[4].choice2,
+];
 
 $(() => {
   // create new array from old array so that it will be
@@ -120,6 +122,7 @@ $(() => {
     // create event handler for when users chooses their answer and thier answer turns yellow
     //and stays yellow until user clicks answer button
     // source: https://api.jquery.com/multiple-selector/
+    // source: https://www.w3schools.com/jquery/event_preventdefault.asp
     $choice1.on("click", () => {
       $("#choice-1").css("background-color", "#f1e189").css("color", "#eeeeee");
     });
@@ -132,17 +135,16 @@ $(() => {
     $choice4.on("click", () => {
       $("#choice-4").css("background-color", "#f1e189").css("color", "#eeeeee");
     });
-  };
 
-  // when user clicks the answer button, it will flash red for wrong answer choices and right
-  // for wrong answe choices
-  //what the user clicks will contribute to their point total
-  // const rightOrWrong = () => {
-  //   // psuedocode
-  //   // correct answer will be green, wrong anweres red -> all jQuery
-  //   // if user gets answer correct, they will get one point added to score
-  //   // else, they do not get any points
-  // };
+    //create event handler for answer button once user chooses their answer
+    $answerButton.on("click", () => {
+      // psuedocode
+      // correct answer will be green, wrong anweres red -> all jQuery
+      // if user gets answer correct, they will get one point added to score
+      // else, they do not get any points
+      // make correct answer green
+    });
+  };
 
   // create event handler for let's
   //play button
@@ -161,9 +163,4 @@ $(() => {
     //a random array element (aka a random song/missing lyrics) appears
     getNewQuestion();
   });
-
-  //create event handler for answer button once user chooses their answer
-  // $answerButton.on("click", () => {
-  //   rightOrWrong();
-  // });
 });
