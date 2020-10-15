@@ -78,12 +78,14 @@ $(() => {
 
     //answerChoice1
     const $choice1 = $("<button>")
+      .attr("id", "choice-1")
       .addClass("choice-1 btn-sm")
       .text(newQuestions[randomIndex].choice1);
     $(".choices").append($choice1);
 
     //answerChoice2
     const $choice2 = $("<button>")
+      .attr("id", "choice-2")
       .addClass("choice-2 btn-sm")
       .text(newQuestions[randomIndex].choice2);
     $(".choices").append($choice2);
@@ -91,11 +93,13 @@ $(() => {
     //answerChoice3
     const $choice3 = $("<button>")
       .addClass("choice-3 btn-sm")
+      .attr("id", "choice-3")
       .text(newQuestions[randomIndex].choice3);
     $(".choices").append($choice3);
 
     //answerChoice4
     const $choice4 = $("<button>")
+      .attr("id", "choice-4")
       .addClass("choice-4 btn-sm ")
       .text(newQuestions[randomIndex].choice4);
     $(".choices").append($choice4);
@@ -112,18 +116,37 @@ $(() => {
     // source: https://stackoverflow.com/questions/3959236/
     //how-to-change-class-name-of-an-element-by-jquery
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
+
+    // create event handler for when users chooses their answer and thier answer turns yellow
+    //and stays yellow until user clicks answer button
+    // source: https://api.jquery.com/multiple-selector/
+    $choice1.on("click", () => {
+      // $("#choice-1").css("background-color", "#f1e189").css("color", "#eeeeee");
+      console.log("choice 1 has been clicked");
+    });
+    $choice2.on("click", () => {
+      // $("#choice-2").css("background-color", "#f1e189").css("color", "#eeeeee");
+      console.log("choice 2 has been clicked");
+    });
+    $choice3.on("click", () => {
+      // $("#choice-3").css("background-color", "#f1e189").css("color", "#eeeeee");
+      console.log("choice 3 has been clicked");
+    });
+    $choice4.on("click", () => {
+      // $("#choice-4").css("background-color", "#f1e189").css("color", "#eeeeee");
+      console.log("choice 4 has been clicked");
+    });
   };
 
-  // user will pick thier answer and then user will click the answer button
   // when user clicks the answer button, it will flash red for wrong answer choices and right
   // for wrong answe choices
   //what the user clicks will contribute to their point total
-  const rightOrWrong = () => {
-    // psuedocode
-    // correct answer will be green, wrong anweres red -> all jQuery
-    // if user gets answer correct, they will get one point added to score
-    // else, they do not get any points
-  };
+  // const rightOrWrong = () => {
+  //   // psuedocode
+  //   // correct answer will be green, wrong anweres red -> all jQuery
+  //   // if user gets answer correct, they will get one point added to score
+  //   // else, they do not get any points
+  // };
 
   // create event handler for let's
   //play button
@@ -143,11 +166,8 @@ $(() => {
     getNewQuestion();
   });
 
-  // create event handler for when users chooses their answer
-  // let userChoice = $("")
-
   //create event handler for answer button once user chooses their answer
-  $answerButton.on("click", () => {
-    rightOrWrong();
-  });
+  // $answerButton.on("click", () => {
+  //   rightOrWrong();
+  // });
 });
