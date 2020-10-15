@@ -114,6 +114,9 @@ $(() => {
     // when user clicks the answer button, it will flash red for wrong answer choices and right 
     // for wrong answe choices
     //what the user clicks will contribute to their point total
+    const rightOrWrong = () => {
+      
+    }
   
   // create event handler for let's
   //play button
@@ -135,9 +138,10 @@ $(() => {
 
   //create event handler for answer button
   $answerButton.on('click', () => {
-    rightOrWrong()
-  })
-// });  
+    rightOrWrong();
+  });
+});  
+
 
 
 
