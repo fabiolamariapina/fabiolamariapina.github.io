@@ -42,49 +42,64 @@ const questionsAndAnswers = [
   },
 ];
 
+// create variables for correct answers
+
+
 $(() => {
   // create new array from old array so that it will be
   //easier to eliminate anything from array that has already been
   //asked as a questions
   //source: TA help
   let newQuestions = questionsAndAnswers;
+
+  //create new variable to keep track of user's score
+  let score = 0; 
+  
   // create new question function
   // when let's play button is clicked, it will generate a 
   //random question and answer pair from array of object
   //source: TA Help
   const getNewQuestion = () => {
+    
     // generate random questions and answers when button is clicked
     const randomIndex = Math.floor(Math.random() * newQuestions.length);
     const $question = $(".description")
       .removeClass("description")
       .addClass("question")
       .text(newQuestions[randomIndex].question);
-    //create new div between question and button
+    
+      //create new div between question and button
     //for answer choices
     const $choices = $("<div>").addClass("choices");
     $(".container").append($choices);
+    
     //answerChoice1
     const $choice1 = $("<button>")
       .addClass("choice-1 btn-sm")
       .text(newQuestions[randomIndex].choice1);
     $(".choices").append($choice1);
+    
     //answerChoice2
     const $choice2 = $("<button>")
       .addClass("choice-2 btn-sm")
       .text(newQuestions[randomIndex].choice2);
     $(".choices").append($choice2);
+    
     //answerChoice3
     const $choice3 = $("<button>")
       .addClass("choice-3 btn-sm")
       .text(newQuestions[randomIndex].choice3);
     $(".choices").append($choice3);
+    
     //answerChoice4
     const $choice4 = $("<button>")
       .addClass("choice-4 btn-sm ")
       .text(newQuestions[randomIndex].choice4);
     $(".choices").append($choice4);
+    
     //remove item from array once it has been used as a question
     newQuestions.splice(randomIndex, 1);
+    
     //change let's play button to Answer button
     // source:
     //https://www.tutorialrepublic.com/faq/how-to-change-the-text
@@ -94,10 +109,12 @@ $(() => {
     // source: https://stackoverflow.com/questions/3959236/
     //how-to-change-class-name-of-an-element-by-jquery
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
+    
     // user will pick thier answer and then user will click the answer button
     // when user clicks the answer button, it will flash red for wrong answer choices and right 
     // for wrong answe choices
-    //what the user clicks will contribute to their point total 
+    //what the user clicks will contribute to their point total
+  
   // create event handler for let's
   //play button
   // source: General Assembly SEI
@@ -116,12 +133,19 @@ $(() => {
 
     getNewQuestion();
   });
-});
+}); 
 
+
+
+
+
+
+
+// save for later
 //for loop to generate random questions and answers
 //recursive function
 //right= function
-for (let i = 0; i < questionsAndAnswers.length; i++) {
-  // console.log(questionsAndAnswers);
-  // output text for question and answer choices
-}
+// for (let i = 0; i < questionsAndAnswers.length; i++) {
+//   // console.log(questionsAndAnswers);
+//   // output text for question and answer choices
+// }
