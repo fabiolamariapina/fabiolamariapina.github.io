@@ -137,9 +137,9 @@ $(() => {
   // let userChoice = $("")
 
   //create event handler for answer button once user chooses their answer
-  $answerButton.on("click", () => {
-    rightOrWrong();
-  });
+  // $answerButton.on("click", () => {
+  //   rightOrWrong();
+  // });
 });
 
 
@@ -152,4 +152,4 @@ $(() => {
     //button
     // source: https://stackoverflow.com/questions/3959236/
     //how-to-change-class-name-of-an-element-by-jquery
-    // const $answerButton = $("#btn").html("Answer").addClass("answer-button");
+    // const $nextButton = $("#btn").html("Next").addClass("next-button");
