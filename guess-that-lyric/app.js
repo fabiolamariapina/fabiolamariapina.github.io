@@ -121,20 +121,16 @@ $(() => {
     //and stays yellow until user clicks answer button
     // source: https://api.jquery.com/multiple-selector/
     $choice1.on("click", () => {
-      // $("#choice-1").css("background-color", "#f1e189").css("color", "#eeeeee");
-      console.log("choice 1 has been clicked");
+      $("#choice-1").css("background-color", "#f1e189").css("color", "#eeeeee");
     });
     $choice2.on("click", () => {
-      // $("#choice-2").css("background-color", "#f1e189").css("color", "#eeeeee");
-      console.log("choice 2 has been clicked");
+      $("#choice-2").css("background-color", "#f1e189").css("color", "#eeeeee");
     });
     $choice3.on("click", () => {
-      // $("#choice-3").css("background-color", "#f1e189").css("color", "#eeeeee");
-      console.log("choice 3 has been clicked");
+      $("#choice-3").css("background-color", "#f1e189").css("color", "#eeeeee");
     });
     $choice4.on("click", () => {
-      // $("#choice-4").css("background-color", "#f1e189").css("color", "#eeeeee");
-      console.log("choice 4 has been clicked");
+      $("#choice-4").css("background-color", "#f1e189").css("color", "#eeeeee");
     });
   };
 
