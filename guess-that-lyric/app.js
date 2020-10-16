@@ -33,18 +33,16 @@ $(() => {
   // when let's play button is clicked, it will generate a
   //random question and answer pair from array of object
   //source: TA Help
-  const getNewQuestion = () => {
-    // loop through question part of the array
-    // it is the only thing that will change, the answer submission will stay the same
-    for (let i = 0; i < questionsAndAnswers.length; i++) {
-      // first question/other questions will appear when button is clicked
-      const $question = $(".description")
-        .removeClass("description")
-        .addClass("question")
-        .text(questionsAndAnswers[i].question);
-    }
+  const getNewQuestion = (i) => {
+    // first question/other questions will appear when button is clicked
+    const $question = $(".description")
+      .removeClass("description")
+      .addClass("question")
+      .text(questionsAndAnswers[i].question);
+    $(".container").append($question);
+    console.log($question);
 
-    //add submission form so that user can type in their answer
+    // add submission form so that user can type in their answer
     // create new div between question and button
     //for answer choices
     // form element
@@ -71,22 +69,24 @@ $(() => {
 
     //create answer button
     const $answerButton = $("#btn")
+      .attr("id", "answer-btn")
       .text("Answer")
       .removeClass("let's-play-button btn-lg")
       .addClass("answer-button btn-lg");
 
     //create event listener
     $answerButton.on("click", () => {
-      //stop it from generating another form
-
       // get user's answer
       // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
       var userAnswer = $("#input-user-answer").val();
       // console.log(userAnswer);
 
-
       // create variable to keep track of user's score
       let score = 0;
+
+      //create question counter and set it to 0
+      let questionCounter = 0;
+
       // loop through questionsAndAsnwers.correctAnswer to check
       //if user got it correct
       for (let i = 0; i < questionsAndAnswers.length; i++) {
@@ -98,11 +98,12 @@ $(() => {
         }
         // else don't add to score
         else {
-          return score;
           console.log(`Your score is ${score}`);
         }
       }
-      getNewQuestion();
+      questionCounter++;
+      // console.log(questionCounter);
+      getNewQuestion(questionCounter);
     });
   };
 
@@ -122,6 +123,6 @@ $(() => {
     // make it so that when let's play button clicks,
     //a random array element (aka a random song/missing lyrics) appear
     // when let's play button is clicked, it will generate a new question
-    getNewQuestion();
+    getNewQuestion(0);
   });
 });
