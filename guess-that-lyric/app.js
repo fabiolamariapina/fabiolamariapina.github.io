@@ -1,4 +1,4 @@
-// create a nested array of objects for questions and answer choices
+// create a nested array of objects for questions and correct answers
 // source: https://stackoverflow.com/questions/56115993/create-nested
 //-array-in-javascript
 // structure inspired by
@@ -36,8 +36,8 @@ $(() => {
 
   //create new div between question and button
   //for answer choices
-  const $choices = $("<div>").addClass("choices");
-  $(".container").append($choices);
+  const $submitAnswer = $("<div>").addClass("submit-answer");
+  $(".container").append($submitAnswer);
 
   // create new question function
   // when let's play button is clicked, it will generate a
@@ -53,38 +53,6 @@ $(() => {
         .text(questionsAndAnswers[i].question);
     }
 
-    // //answerChoice1
-    // const $choice1 = $("<button>")
-    //   .attr("id", "choice-1")
-    //   .addClass("btn-sm")
-    //   .text(questionsAndAnswers[0].answers.choice1);
-    // $(".choices").append($choice1);
-
-    // //answerChoice2
-    // const $choice2 = $("<button>")
-    //   .attr("id", "choice-2")
-    //   .addClass("btn-sm")
-    //   .text(questionsAndAnswers[0].answers.choice2);
-    // $(".choices").append($choice2);
-
-    // //answerChoice3
-    // const $choice3 = $("<button>")
-    //   .addClass("btn-sm")
-    //   .attr("id", "choice-3")
-    //   .text(questionsAndAnswers[0].answers.choice3);
-    // $(".choices").append($choice3);
-
-    //remove item from array once it has been used as a question
-    // newQuestions.splice(Index, 1);
-
-    //change let's play button to Answer button
-    // source:
-    //https://www.tutorialrepublic.com/faq/how-to-change-the-text
-    //-of-a-button-using-jquery.php
-    // change class of answer button but keep same styling of let's play
-    //button
-    // source: https://stackoverflow.com/questions/3959236/
-    //how-to-change-class-name-of-an-element-by-jquery
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
 
     // create event handler for when users chooses their answer and thier answer turns yellow
