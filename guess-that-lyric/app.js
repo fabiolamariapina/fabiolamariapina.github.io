@@ -50,53 +50,68 @@ $(() => {
     // form element
     const $form = $("<form>").addClass("form-inline");
     $(".container").append($form);
+
     // div where form is stored
     const $submitAnswer = $("<div>")
       .addClass("form-group mb-2")
       .attr("id", "form");
+
     //Enter Answer Here instruction for user
     $form.append($submitAnswer);
     const $input = $("<label>")
       .addClass("enter-answer-here")
       .text("Enter Answer Here");
     $submitAnswer.append($input);
+
     // where user will enter answer
     const $userInput = $("<input>")
       .addClass("form-control")
       .attr("id", "input-user-answer");
     $submitAnswer.append($userInput);
+
+    // //create event handler for answer button once user chooses their answer
+    // $answerButton.on("click", () => {
+    //   // get user's answer
+    //   // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
+    //   var userAnswer = $("#input-user-answer").val();
+    //   console.log(userAnswer);
+    //   // create variable to keep track of user's score
+    //   let score = 0;
+    // });
+
     //create answer button
     const $answerButton = $("#btn")
       .text("Answer")
       .removeClass("let's-play-button btn-lg")
       .addClass("answer-button btn-lg");
 
-    // create event listner for next button
-    // $nextButton.on(click, () => {
-    //   getNewQuestion();
-    // });
-
-    //create event handler for answer button once user chooses their answer
-    // $answerButton.on("click", () => {
-    //   // create next button
-    //   const $nextButton = $("#btn")
-    //     .text("Next")
-    //     .removeClass("answer-button btn-lg")
-    //     .addClass("next-button btn-lg");
-
-    // get user's answer
-    // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
-    // var userAnswer = $("#input-user-answer").val();
-    // console.log(userAnswer);
-    // userAnswer.toLowerCase().trim();
-
-    //prevent another form from appending
+    //create event listener
+    $answerButton.on("click", () => {
+      // get user's answer
+      // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
+      var userAnswer = $("#input-user-answer").val();
+      console.log(userAnswer);
+      // create variable to keep track of user's score
+      let score = 0;
+      // loop through questionsAndAsnwers.correctAnswer to check
+      //if user got it correct
+      for (let i = 0; i < questionsAndAnswers.length; i++) {
+        // check answer using if/else statement
+        // if correct give it the correct css stylying and add score
+        if (userAnswer === questionsAndAnswers[i].correctAnswer) {
+          score++;
+          console.log(`Your score is ${score}`);
+        }
+        // else give it the incorrect styling and dont give score
+        else {
+          console.log(`Your score so far is ${score}`);
+        }
+      }
+    });
 
     // loop through questionsAndAsnwers.correctAnswer to check
     //if user got it correct
     // for (let i = 0; i < questionsAndAnswers.length; i++) {
-    //create variable to keep track of user's score
-    // let score = 0;
 
     //check answer using if/else statement
     // if correct give it the correct css stylying and add score
