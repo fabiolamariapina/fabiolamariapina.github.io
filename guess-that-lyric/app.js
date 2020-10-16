@@ -10,7 +10,6 @@ const questionsAndAnswers = [
       choice1: "horse,ride",
       choice2: "horse, die",
       choice3: "pony, ride",
-      choice4: "pony, die",
     },
     correctAnswer: "horse,ride",
   },
@@ -19,9 +18,8 @@ const questionsAndAnswers = [
       "There's a fire starting in my ____ Reaching a fever ____ and it's bringing me out the dark",
     answers: {
       choice1: "heart, ditch",
-      choice2: "dart, ditch",
+      choice2: "heart, pitch",
       choice3: "dart, pitch",
-      choice4: "heart, pitch",
     },
     correctAnswer: "heart, pitch",
   },
@@ -31,7 +29,6 @@ const questionsAndAnswers = [
       choice1: "Bacardi",
       choice2: "Tequila",
       choice3: "Hennessy",
-      choice4: "Vodka",
     },
     correctAnswer: "Hennessy",
   },
@@ -42,7 +39,6 @@ const questionsAndAnswers = [
       choice1: "Booty",
       choice2: "Photoshop",
       choice3: "Facetune",
-      choice4: "funky jazz",
     },
     correctAnswer: "Photoshop",
   },
@@ -52,7 +48,6 @@ const questionsAndAnswers = [
       choice1: "water",
       choice2: "liquor",
       choice3: "soda",
-      choice4: "vodka",
     },
     correctAnswer: "liquor",
   },
@@ -75,7 +70,7 @@ $(() => {
       const $question = $(".description")
         .removeClass("description")
         .addClass("question")
-        .text(questionsAndAnswers[i].question);
+        .text(questionsAndAnswers[0].question);
 
       //create new div between question and button
       //for answer choices
@@ -86,29 +81,29 @@ $(() => {
       const $choice1 = $("<button>")
         .attr("id", "choice-1")
         .addClass("btn-sm")
-        .text(questionsAndAnswers[i].answers.choice1);
+        .text(questionsAndAnswers[0].answers.choice1);
       $(".choices").append($choice1);
 
       //answerChoice2
       const $choice2 = $("<button>")
         .attr("id", "choice-2")
         .addClass("btn-sm")
-        .text(questionsAndAnswers[i].answers.choice2);
+        .text(questionsAndAnswers[0].answers.choice2);
       $(".choices").append($choice2);
 
       //answerChoice3
       const $choice3 = $("<button>")
         .addClass("btn-sm")
         .attr("id", "choice-3")
-        .text(questionsAndAnswers[i].answers.choice3);
+        .text(questionsAndAnswers[0].answers.choice3);
       $(".choices").append($choice3);
 
       //answerChoice4
-      const $choice4 = $("<button>")
-        .attr("id", "choice-4")
-        .addClass("btn-sm")
-        .text(questionsAndAnswers[i].answers.choice4);
-      $(".choices").append($choice4);
+      // const $choice4 = $("<button>")
+      //   .addClass("btn-sm")
+      //   .attr("id", "choice-4")
+      //   .text(questionsAndAnswers[0].answers.choice4);
+      // $(".choices").append($choice4);
 
       //remove item from array once it has been used as a question
       // newQuestions.splice(randomIndex, 1);
