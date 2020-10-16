@@ -57,30 +57,25 @@ const questionsAndAnswers = [
     correctAnswer: "liquor",
   },
 ];
+// console.log(questionsAndAnswers[i].question);
 
 $(() => {
-  // create new array from old array so that it will be
-  //easier to eliminate anything from array that has already been
-  //asked as a questions
-  //source: TA help
-  // let newQuestions = questionsAndAnswers;
-
-  //create new variable to keep track of user's score
+  //create variable to keep track of user's score
   let score = 0;
 
-  // create for loop to iterate through array
-  for (let i = 0; i < questionsAndAnswers.length; i++) {
-    // create new question function
-    // when let's play button is clicked, it will generate a
-    //random question and answer pair from array of object
-    //source: TA Help
-    const getNewQuestion = () => {
-      // generate random questions and answers when button is clicked
-      // const randomIndex = Math.floor(Math.random() * newQuestions.length);
+  // create new question function
+  // when let's play button is clicked, it will generate a
+  //random question and answer pair from array of object
+  //source: TA Help
+  const getNewQuestion = () => {
+    // create for loop to iterate through array
+    // for each loop, it will perform functions inside the loop
+    for (let i = 0; i < questionsAndAnswers.length; i++) {
+      // first questio/other questions will appear when button is clicked
       const $question = $(".description")
         .removeClass("description")
         .addClass("question")
-        .text(questionsAndAnswers.question);
+        .text(questionsAndAnswers[i].question);
 
       //create new div between question and button
       //for answer choices
@@ -91,28 +86,28 @@ $(() => {
       const $choice1 = $("<button>")
         .attr("id", "choice-1")
         .addClass("btn-sm")
-        .text(questionsAndAnswers.answers.choice1);
+        .text(questionsAndAnswers[i].answers.choice1);
       $(".choices").append($choice1);
 
       //answerChoice2
       const $choice2 = $("<button>")
         .attr("id", "choice-2")
         .addClass("btn-sm")
-        .text(questionsAndAnswers.answers.choice2);
+        .text(questionsAndAnswers[i].answers.choice2);
       $(".choices").append($choice2);
 
       //answerChoice3
       const $choice3 = $("<button>")
         .addClass("btn-sm")
         .attr("id", "choice-3")
-        .text(questionsAndAnswers.answers.choice3);
+        .text(questionsAndAnswers[i].answers.choice3);
       $(".choices").append($choice3);
 
       //answerChoice4
       const $choice4 = $("<button>")
         .attr("id", "choice-4")
         .addClass("btn-sm")
-        .text(questionsAndAnswers.answers.choice4);
+        .text(questionsAndAnswers[i].answers.choice4);
       $(".choices").append($choice4);
 
       //remove item from array once it has been used as a question
@@ -160,50 +155,50 @@ $(() => {
       // create answerQuestion function
       // in the answerButton function: get the text of the button(can be done
       //with jquerry) and compare it to the correct answer using an if statement
-      const answerQuestion = (choice) => {
-        let userChoice = "";
-        if (choice === "choice1") {
-          // this is where I make user choice = to choice 1 button
-          let userChoice = "choice1";
-        } else if (choice === "choice2") {
-          // this is where I make user choice = to choice 2 button
-          let userChoice = "choice2";
-        } else if (choice === "choice3") {
-          //this is where I make user choice = to choice 3 button
-          let userChoice = "choice3";
-        } else if (choice === "choice4") {
-          //this is where I make user choice = to choice 4 button
-          let userChoice = "choice4";
-        }
+      // const answerQuestion = (choice) => {
+      //   let userChoice = "";
+      //   if (choice === "choice1") {
+      //     // this is where I make user choice = to choice 1 button
+      //     let userChoice = "choice1";
+      //   } else if (choice === "choice2") {
+      //     // this is where I make user choice = to choice 2 button
+      //     let userChoice = "choice2";
+      //   } else if (choice === "choice3") {
+      //     //this is where I make user choice = to choice 3 button
+      //     let userChoice = "choice3";
+      //   } else if (choice === "choice4") {
+      //     //this is where I make user choice = to choice 4 button
+      //     let userChoice = "choice4";
+      //   }
 
-        //create event handler for answer button once user chooses their answer
-        $answerButton.on("click", (e) => {
-          // if correct give it the correct css stylying and add score
-          if (userChoice === newQuestions[randomIndex].correctAnswer) {
-            $(e.target).css({
-              "background-color": "#b8de6f",
-              color: "#eeeeee",
-            });
-            score++;
-            console.log(score);
-          }
-          // else give it the incorrect styling and dont give score
-          else {
-            $(e.target).css({
-              "background-color": "#ff5722",
-              color: "#eeeeee",
-            });
-            return score;
-          }
-          const $nextButton = $("#btn").html("Next").addClass("next-button");
-          //create event listner for next button
-          $nextButton.on(click, () => {
-            getNewQuestion();
-          });
-        });
-      };
-    };
-  }
+      //   //create event handler for answer button once user chooses their answer
+      //   $answerButton.on("click", (e) => {
+      //     // if correct give it the correct css stylying and add score
+      //     if (userChoice === newQuestions[randomIndex].correctAnswer) {
+      //       $(e.target).css({
+      //         "background-color": "#b8de6f",
+      //         color: "#eeeeee",
+      //       });
+      //       score++;
+      //       console.log(score);
+      //     }
+      //     // else give it the incorrect styling and dont give score
+      //     else {
+      //       $(e.target).css({
+      //         "background-color": "#ff5722",
+      //         color: "#eeeeee",
+      //       });
+      //       return score;
+      //     }
+      //     const $nextButton = $("#btn").html("Next").addClass("next-button");
+      //     //create event listner for next button
+      //     $nextButton.on(click, () => {
+      //       getNewQuestion();
+      //     });
+      //   });
+      // };
+    }
+  };
 
   // create event handler for let's
   //play button
@@ -219,7 +214,8 @@ $(() => {
     // source: https://api.jquery.com/removeclass/
     // add text of object in questionAndAnswers array
     // make it so that when let's play button clicks,
-    //a random array element (aka a random song/missing lyrics) appears
+    //a random array element (aka a random song/missing lyrics) appear
+    // when let's play button is clicked, it will generate a new question
     getNewQuestion();
   });
 });
