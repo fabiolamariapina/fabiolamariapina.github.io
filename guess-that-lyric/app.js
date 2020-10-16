@@ -6,7 +6,7 @@ const questionsAndAnswers = [
   {
     question:
       "Yeah, I'm gonna take my ____ to the old town road I'm gonna ____ 'til I can't no more",
-    correctAnswer: "horse,ride",
+    correctAnswer: "horse, ride",
   },
   {
     question:
@@ -90,24 +90,26 @@ $(() => {
       // get user's answer
       // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
       var userAnswer = $("#input-user-answer").val();
-      console.log(userAnswer);
+      // console.log(userAnswer);
       // create variable to keep track of user's score
       let score = 0;
       // loop through questionsAndAsnwers.correctAnswer to check
       //if user got it correct
       for (let i = 0; i < questionsAndAnswers.length; i++) {
         // check answer using if/else statement
-        // if correct give it the correct css stylying and add score
+        // if correct add to score
         if (userAnswer === questionsAndAnswers[i].correctAnswer) {
           score++;
           console.log(`Your score is ${score}`);
         }
-        // else give it the incorrect styling and dont give score
+        // else don't add to score
         else {
+          return score;
           console.log(`Your score so far is ${score}`);
         }
       }
-      getNewQuestion();
+      //create next button that will generate next question
+      // getNewQuestion();
     });
 
     //check answer using if/else statement
