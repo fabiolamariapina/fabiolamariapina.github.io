@@ -27,9 +27,7 @@ const questionsAndAnswers = [
     correctAnswer: "liquor",
   },
 ];
-for (let i = 0; i < questionsAndAnswers.length; i++) {
-  // console.log(questionsAndAnswers[i].question);
-}
+
 $(() => {
   //create variable to keep track of user's score
   let score = 0;
@@ -39,7 +37,8 @@ $(() => {
   //random question and answer pair from array of object
   //source: TA Help
   const getNewQuestion = () => {
-    // loop through array
+    // loop through question part of the array
+    // it is the only thing that will change, the answer submission will stay the same
     for (let i = 0; i < questionsAndAnswers.length; i++) {
       // first question/other questions will appear when button is clicked
       const $question = $(".description")
@@ -76,35 +75,24 @@ $(() => {
       .removeClass("let's-play-button btn-lg")
       .addClass("answer-button btn-lg");
 
-    // create event handler for when users chooses their answer and thier answer turns yellow
-    //and stays yellow until user clicks answer button
-    // source: https://api.jquery.com/multiple-selector/
-    // source: https://www.w3schools.com/jquery/event_preventdefault.asp
-    $choice1.on("click", () => {
-      $("#choice-1").css("background-color", "#f1e189").css("color", "#eeeeee");
-      answerQuestion("choice1");
-    });
-    $choice2.on("click", () => {
-      $("#choice-2").css("background-color", "#f1e189").css("color", "#eeeeee");
-      answerQuestion("choice2");
-    });
-    $choice3.on("click", () => {
-      $("#choice-3").css("background-color", "#f1e189").css("color", "#eeeeee");
-      answerQuestion("choice3");
-    });
+    // get user's answer
+    // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
+    var userAnswer = $("#input-user-answer").val();
+    console.log(userAnswer);
+    userAnswer.toLowerCase().trim();
 
     //create event handler for answer button once user chooses their answer
     $answerButton.on("click", (e) => {
       // if correct give it the correct css stylying and add score
-      if (userChoice === questionsAndAnswers[0].correctAnswer) {
-        score++;
-        console.log(score);
-      }
+      // if (userChoice === questionsAndAnswers[0].correctAnswer) {
+      //   score++;
+      //   console.log(score);
+      // }
       // else give it the incorrect styling and dont give score
-      else {
-        return score;
-      }
-      const $nextButton = $("#btn").html("Next").addClass("next-button");
+      // else {
+      //   return score;
+      // }
+      // const $nextButton = $("#btn").html("Next").addClass("next-button");
       //create event listner for next button
       // $nextButton.on(click, () => {
       //   getNewQuestion();
