@@ -53,6 +53,9 @@ $(() => {
         .text(questionsAndAnswers[i].question);
     }
 
+    //add submission form so that user can type in their answer 
+    
+
     const $answerButton = $("#btn").html("Answer").addClass("answer-button");
 
     // create event handler for when users chooses their answer and thier answer turns yellow
@@ -72,25 +75,6 @@ $(() => {
       answerQuestion("choice3");
     });
 
-    // create answerQuestion function
-    // in the answerButton function: get the text of the button(can be done
-    //with jquerry) and compare it to the correct answer using an if statement
-    const answerQuestion = (choice) => {
-      let userChoice = "";
-      if (choice === "choice1") {
-        // this is where I make user choice = to choice 1 button
-        let userChoice = "choice1";
-      } else if (choice === "choice2") {
-        // this is where I make user choice = to choice 2 button
-        let userChoice = "choice2";
-      } else if (choice === "choice3") {
-        //this is where I make user choice = to choice 3 button
-        let userChoice = "choice3";
-      } else if (choice === "choice4") {
-        //this is where I make user choice = to choice 4 button
-        let userChoice = "choice4";
-      }
-    };
 
     //create event handler for answer button once user chooses their answer
     $answerButton.on("click", (e) => {
