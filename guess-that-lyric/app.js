@@ -34,11 +34,6 @@ $(() => {
   //create variable to keep track of user's score
   let score = 0;
 
-  //create new div between question and button
-  //for answer choices
-  const $submitAnswer = $("<div>").addClass("submit-answer");
-  $(".container").append($submitAnswer);
-
   // create new question function
   // when let's play button is clicked, it will generate a
   //random question and answer pair from array of object
@@ -53,10 +48,33 @@ $(() => {
         .text(questionsAndAnswers[i].question);
     }
 
-    //add submission form so that user can type in their answer 
-    
+    //add submission form so that user can type in their answer
+    // create new div between question and button
+    //for answer choices
+    // form element
+    const $form = $("<form>").addClass("form-inline");
+    $(".container").append($form);
+    // div where form is stored
+    const $submitAnswer = $("<div>")
+      .addClass("form-group mb-2")
+      .attr("id", "form");
+    //Enter Answer Here instruction for user
+    $form.append($submitAnswer);
+    const $input = $("<label>")
+      .addClass("enter-answer-here")
+      .text("Enter Answer Here");
+    $submitAnswer.append($input);
+    // where user will enter answer
+    const $userInput = $("<input>")
+      .addClass("form-control")
+      .attr("id", "input-user-answer");
+    $submitAnswer.append($userInput);
 
-    const $answerButton = $("#btn").html("Answer").addClass("answer-button");
+    //create answer button
+    const $answerButton = $("#btn")
+      .text("Answer")
+      .removeClass("let's-play-button btn-lg")
+      .addClass("answer-button btn-lg");
 
     // create event handler for when users chooses their answer and thier answer turns yellow
     //and stays yellow until user clicks answer button
@@ -74,7 +92,6 @@ $(() => {
       $("#choice-3").css("background-color", "#f1e189").css("color", "#eeeeee");
       answerQuestion("choice3");
     });
-
 
     //create event handler for answer button once user chooses their answer
     $answerButton.on("click", (e) => {

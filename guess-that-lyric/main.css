@@ -35,8 +35,18 @@ button:hover {
   transition: all 200ms ease;
 }
 
-.submit-answer {
-  margin: 25px;
+.form-inline {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 25px;
+}
+
+.enter-answer-here {
+  font-size: 24px;
+  padding: 25px;
+}
+
+#button-container {
+  position: relative;
+  bottom: 80px;
 }
