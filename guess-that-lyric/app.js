@@ -69,16 +69,6 @@ $(() => {
       .attr("id", "input-user-answer");
     $submitAnswer.append($userInput);
 
-    // //create event handler for answer button once user chooses their answer
-    // $answerButton.on("click", () => {
-    //   // get user's answer
-    //   // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
-    //   var userAnswer = $("#input-user-answer").val();
-    //   console.log(userAnswer);
-    //   // create variable to keep track of user's score
-    //   let score = 0;
-    // });
-
     //create answer button
     const $answerButton = $("#btn")
       .text("Answer")
@@ -87,10 +77,20 @@ $(() => {
 
     //create event listener
     $answerButton.on("click", () => {
+      //stop it from generating another form
+
       // get user's answer
       // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
       var userAnswer = $("#input-user-answer").val();
       // console.log(userAnswer);
+
+      //create next button
+      const $nextButton = $("#btn").text("Next");
+      //create event listener for next button when clciked
+      $nextButton.on("click", () => {
+        getNewQuestion();
+      });
+
       // create variable to keep track of user's score
       let score = 0;
       // loop through questionsAndAsnwers.correctAnswer to check
@@ -105,25 +105,14 @@ $(() => {
         // else don't add to score
         else {
           return score;
-          console.log(`Your score so far is ${score}`);
+          console.log(`Your score is ${score}`);
         }
       }
       //create next button that will generate next question
-      // getNewQuestion();
+      //const $nextButton = $("#btn").text("Next");
+      //generate new question
+      getNewQuestion();
     });
-
-    //check answer using if/else statement
-    // if correct give it the correct css stylying and add score
-    // if (userAnswer === questionsAndAnswers[i].correctAnswer) {
-    //   score++;
-    //   console.log(score);
-    // }
-    // else give it the incorrect styling and dont give score
-    //   else {
-    //     return score;
-    //   }
-    // }
-    // });
   };
 
   // create event handler for let's
