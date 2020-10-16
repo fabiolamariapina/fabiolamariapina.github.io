@@ -39,8 +39,8 @@ $(() => {
       .removeClass("description")
       .addClass("question")
       .text(questionsAndAnswers[i].question);
-    $(".container").append($question);
-    console.log($question);
+    // $(".container").append($question);
+    // console.log($question);
 
     // add submission form so that user can type in their answer
     // create new div between question and button
@@ -85,7 +85,7 @@ $(() => {
       let score = 0;
 
       //create question counter and set it to 0
-      let questionCounter = 0;
+      // let questionCounter = 0;
 
       // loop through questionsAndAsnwers.correctAnswer to check
       //if user got it correct
@@ -101,9 +101,9 @@ $(() => {
           console.log(`Your score is ${score}`);
         }
       }
-      questionCounter++;
+      // questionCounter++;
       // console.log(questionCounter);
-      getNewQuestion(questionCounter);
+      getNewQuestion();
     });
   };
 
