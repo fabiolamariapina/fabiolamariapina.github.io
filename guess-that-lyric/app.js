@@ -107,11 +107,8 @@ $(() => {
           console.log(`Your score so far is ${score}`);
         }
       }
+      getNewQuestion();
     });
-
-    // loop through questionsAndAsnwers.correctAnswer to check
-    //if user got it correct
-    // for (let i = 0; i < questionsAndAnswers.length; i++) {
 
     //check answer using if/else statement
     // if correct give it the correct css stylying and add score
