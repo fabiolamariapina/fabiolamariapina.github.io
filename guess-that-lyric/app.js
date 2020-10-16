@@ -84,12 +84,6 @@ $(() => {
       var userAnswer = $("#input-user-answer").val();
       // console.log(userAnswer);
 
-      //create next button
-      const $nextButton = $("#btn").text("Next");
-      //create event listener for next button when clciked
-      $nextButton.on("click", () => {
-        getNewQuestion();
-      });
 
       // create variable to keep track of user's score
       let score = 0;
@@ -108,9 +102,6 @@ $(() => {
           console.log(`Your score is ${score}`);
         }
       }
-      //create next button that will generate next question
-      //const $nextButton = $("#btn").text("Next");
-      //generate new question
       getNewQuestion();
     });
   };
