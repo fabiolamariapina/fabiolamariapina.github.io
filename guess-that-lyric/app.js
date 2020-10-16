@@ -29,9 +29,6 @@ const questionsAndAnswers = [
 ];
 
 $(() => {
-  //create variable to keep track of user's score
-  let score = 0;
-
   // create new question function
   // when let's play button is clicked, it will generate a
   //random question and answer pair from array of object
@@ -68,51 +65,51 @@ $(() => {
       .addClass("form-control")
       .attr("id", "input-user-answer");
     $submitAnswer.append($userInput);
-
     //create answer button
     const $answerButton = $("#btn")
       .text("Answer")
       .removeClass("let's-play-button btn-lg")
       .addClass("answer-button btn-lg");
 
-    // get user's answer
-    // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
-    var userAnswer = $("#input-user-answer").val();
-    // console.log(userAnswer);
-    userAnswer.toLowerCase().trim();
-
-    //create check answer function when answer button is clicked
-    // that will check answer, keep score, and change to next button
-    const checkAnswer = () => {
-      // create next button
-      const $nextButton = $("#btn")
-        .text("Next")
-        .removeClass("answer-button btn-lg")
-        .addClass("next-button btn-lg");
-      // create event listner for next button
-      $nextButton.on(click, () => {
-        getNewQuestion();
-      });
-    };
+    // create event listner for next button
+    // $nextButton.on(click, () => {
+    //   getNewQuestion();
+    // });
 
     //create event handler for answer button once user chooses their answer
-    $answerButton.on("click", () => {
-      // if correct give it the correct css stylying and add score
-      //   if (userChoice === questionsAndAnswers[0].correctAnswer) {
-      //      score++;
-      //    console.log(score);
-      //  }
-      // else give it the incorrect styling and dont give score
-      // else {
-      //   return score;
-      // }
-      // const $nextButton = $("#btn").html("Next").addClass("next-button");
-      //create event listner for next button
-      // $nextButton.on(click, () => {
-      //   getNewQuestion();
-      // });
-      checkAnswer();
-    });
+    // $answerButton.on("click", () => {
+    //   // create next button
+    //   const $nextButton = $("#btn")
+    //     .text("Next")
+    //     .removeClass("answer-button btn-lg")
+    //     .addClass("next-button btn-lg");
+
+    // get user's answer
+    // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
+    // var userAnswer = $("#input-user-answer").val();
+    // console.log(userAnswer);
+    // userAnswer.toLowerCase().trim();
+
+    //prevent another form from appending
+
+    // loop through questionsAndAsnwers.correctAnswer to check
+    //if user got it correct
+    // for (let i = 0; i < questionsAndAnswers.length; i++) {
+    //create variable to keep track of user's score
+    // let score = 0;
+
+    //check answer using if/else statement
+    // if correct give it the correct css stylying and add score
+    // if (userAnswer === questionsAndAnswers[i].correctAnswer) {
+    //   score++;
+    //   console.log(score);
+    // }
+    // else give it the incorrect styling and dont give score
+    //   else {
+    //     return score;
+    //   }
+    // }
+    // });
   };
 
   // create event handler for let's
