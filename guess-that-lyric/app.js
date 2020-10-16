@@ -78,16 +78,30 @@ $(() => {
     // get user's answer
     // source: https://stackoverflow.com/questions/12949041/assign-jquery-variable-to-input
     var userAnswer = $("#input-user-answer").val();
-    console.log(userAnswer);
+    // console.log(userAnswer);
     userAnswer.toLowerCase().trim();
 
+    //create check answer function when answer button is clicked
+    // that will check answer, keep score, and change to next button
+    const checkAnswer = () => {
+      // create next button
+      const $nextButton = $("#btn")
+        .text("Next")
+        .removeClass("answer-button btn-lg")
+        .addClass("next-button btn-lg");
+      // create event listner for next button
+      $nextButton.on(click, () => {
+        getNewQuestion();
+      });
+    };
+
     //create event handler for answer button once user chooses their answer
-    $answerButton.on("click", (e) => {
+    $answerButton.on("click", () => {
       // if correct give it the correct css stylying and add score
-      // if (userChoice === questionsAndAnswers[0].correctAnswer) {
-      //   score++;
-      //   console.log(score);
-      // }
+      //   if (userChoice === questionsAndAnswers[0].correctAnswer) {
+      //      score++;
+      //    console.log(score);
+      //  }
       // else give it the incorrect styling and dont give score
       // else {
       //   return score;
@@ -97,6 +111,7 @@ $(() => {
       // $nextButton.on(click, () => {
       //   getNewQuestion();
       // });
+      checkAnswer();
     });
   };
 
