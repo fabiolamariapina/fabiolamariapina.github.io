@@ -85,7 +85,7 @@ $(() => {
       let score = 0;
 
       //create question counter and set it to 0
-      // let questionCounter = 0;
+      let questionCounter = 0;
 
       // loop through questionsAndAsnwers.correctAnswer to check
       //if user got it correct
@@ -101,7 +101,7 @@ $(() => {
           console.log(`Your score is ${score}`);
         }
       }
-      // questionCounter++;
+      questionCounter++;
       // console.log(questionCounter);
       getNewQuestion();
     });
